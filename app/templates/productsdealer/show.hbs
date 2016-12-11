@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3"></div>
+   <div class="col-md-9">
+		<p>
+		  {{link-to "Click to go back" "products.index" }}
+		</p>
+
+       <h1>{{model.title}}  <small>Size:{{model.size}}</small></h1>
+		{{!-- <p>
+		  <strong>Title:</strong>
+		  <span>{{model.title}}</span>
+		</p> --}}
+           <div class="detail price">
+               <h3>{{model.price}}</h3>
+            </div>
+         <div class="detail image">
+           <img class="feed-img"src={{model.image}} alt="Chania" width="1024" height="290"> 
+        </div>
+            <br>
+            <div>
+              {{!-- {{#link-to  "products.edit" product class="btn btn-success"}}Edit Product{{/link-to}}
+              {{#link-to  "products.show" product class="btn btn-success"}}View Product{{/link-to}} --}}
+             
+              {{!-- <a href="" class="btn btn-danger" {{action "remove" product}}> Delete Product</a> --}}
+              {{!-- {{#link-to 'checkout'   class="btn btn-success"}}Proceed to Checkout{{/link-to}} --}}
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+            </div>
+   </div>
+</div>

@@ -1,0 +1,32 @@
+
+
+        <form {{action "save" on="submit"}}>
+          <div>
+            <label>
+              Title
+              {{input type="text" value=model.title}}
+            </label>
+          </div>
+          <div>
+            <label>
+              Price
+              {{input type="text" value=model.price}}
+            </label>
+          </div>
+          <div>
+            <label>
+              Size
+              {{input type="text" value=model.size}}
+            </label>
+          </div>
+          <div>
+            <label>
+              Image
+              {{input type="text" value=model.image}}
+            </label>
+          </div>
+          <div>
+            <input type="submit" value="Save">
+          </div>
+        </form>
+

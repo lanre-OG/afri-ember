@@ -1,0 +1,50 @@
+<div class="container-fluid">
+	<div class="row header">
+	<div class="col-md-12">
+	<nav class="navbar navbar-light bg-faded">
+	  <a class="navbar-brand" href="#"><h2>Afrimat<small> African store</small></h2></a>
+     
+      <ul class="nav navbar-nav" style="margin-top: 80px;">
+     {{#if session.isAuthenticated}}
+       {{#link-to 'index' tagName="li"}}<a href>Home <span class="sr-only">(current)</span></a>{{/link-to}}
+
+       {{#link-to 'productsdealer' tagName="li"}}<a href>Dealer View-Products <span class="sr-only">(current)</span></a>{{/link-to}}
+      {{else}}
+
+       {{#link-to 'index' tagName="li"}}<a href>Home <span class="sr-only">(current)</span></a>{{/link-to}}
+
+       {{#link-to 'products' tagName="li"}}<a href>Products <span class="sr-only">(current)</span></a>{{/link-to}}
+      {{/if}}
+     </ul>
+     <ul class="nav navbar-nav" style="float: right;">
+       {{#if session.isAuthenticated}}
+     		<li>
+		  		<a {{action 'invalidateSession'}}>Logout</a>
+		  	</li>
+		{{else}}
+			<li>
+		 	  {{#link-to 'login'}}Login{{/link-to}} 
+		 	</li>
+		 	<li>
+		   	{{#link-to 'register'}}<span class="glyphicon glyphicon-user" aria-hidden="true"></span>Register{{/link-to}} 
+		   	</li>
+		{{/if}}
+     </ul>
+	</nav>
+	</div>
+	</div>
+
+	<div class="row">
+		{{outlet}}
+	</div>
+
+</div>
+
+
+
+	
+
+  
+{{!-- 	<footer class="footer">
+	    <p>©Afrimat 2016</p>
+	</footer> --}}

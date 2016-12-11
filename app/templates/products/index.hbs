@@ -1,0 +1,100 @@
+<div class="row">
+    {{!-- <p>
+      {{link-to "New Product" "products.new" }}
+    </p> --}}
+  <div class="col-md-3"></div>
+   <div class="col-md-9">
+    
+
+    {{#liquid-if model.length use="toDown"}}
+
+      {{#each model as |product|}}
+            <h1>{{product.title}}  <small>Size:{{product.size}}</small></h1>
+
+            <div class="detail price">
+               {{product.price}}
+            </div>
+
+            <div class="detail image">
+
+               <img class="feed-img"src={{product.image}} alt="Chania" width="1024" height="290">
+            </div>
+              <br>
+            <div>
+             {{!--  {{#link-to  "products.edit" product class="btn btn-success"}}Edit Product{{/link-to}} --}}
+              {{#link-to  "products.show" product class="btn btn-success"}}View Product{{/link-to}}
+             
+              {{!-- <a href="" class="btn btn-danger" {{action "remove" product}}> Delete Product</a> --}}
+              {{!-- {{#link-to 'cloths.checkout'  class="btn btn-success"}}Checkout{{/link-to}} --}}
+            </div>
+        {{/each}}
+
+    {{else}}
+      <p id="blankslate">
+        No Products found
+      </p>
+    {{/liquid-if}}
+    </div>
+</div>
+
+{{!-- <h1>Products list</h1>
+
+<p>
+  {{link-to "New Product" "products.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Size
+        </th>
+        <th>
+          Image
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |product|}}
+        <tr>
+          <td>
+            {{product.title}}
+          </td>
+          <td>
+            {{product.price}}
+          </td>
+          <td>
+            {{product.size}}
+          </td>
+          <td>
+            {{product.image}}
+          </td>
+          <td>
+            {{link-to "Edit" "products.edit" product}}
+          </td>
+          <td>
+            {{link-to "Show" "products.show" product}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" product}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Products found
+  </p>
+{{/if}}
+ --}}
