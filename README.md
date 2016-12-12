@@ -14,11 +14,30 @@ You will need the following things properly installed on your computer.
 * [PhantomJS](http://phantomjs.org/)
 
 ## Installation
+git clone https://github.com/lanreogunmola/afri_django.git
 
-* `git clone <repository-url>` this repository
-* `cd afri-ember`
-* `npm install`
-* `bower install`
+cd afri_django
+
+pip install django==1.9.8
+
+pip install djangorestframework
+
+pip install django-cors-headers
+
+pip install djangorestframework-jsonapi==2.0.0-beta.2
+
+python manage.py runserver
+
+
+change directory to parent (cd ..)
+Ensure ember 2.8.0 is installed 
+git clone https://github.com/lanreogunmola/afri-ember.git
+
+cd afri-ember
+
+npm install
+
+bower install
 
 ## Running / Development
 
